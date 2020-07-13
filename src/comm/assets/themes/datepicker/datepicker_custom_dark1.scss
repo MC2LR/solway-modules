@@ -1,0 +1,13 @@
+.custom_dark1{
+    &.el-input--prefix .el-input__inner {
+        background: rgb(16,30,57);
+        border:1px solid rgba(52, 210, 238, 0.5);
+        color: rgba(52, 210, 238, 0.5);
+    }
+    &.el-date-editor.el-input, .el-date-editor.el-input__inner {
+        width: 170px;
+    }
+    .el-input__icon {
+        color: rgba(47,191,203,1);
+    }
+}

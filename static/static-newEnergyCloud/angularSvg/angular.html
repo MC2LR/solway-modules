@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>接线图</title>
+    <style>
+        html,body {
+            margin: 0;
+            padding: 0;
+        }
+        .red {
+            color: red;
+            fill: red;
+        }
+        .gray {
+            color: gray;
+            fill: gray;
+        }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl" style="text-align: center;" ng-include="svgUrl">
+
+</body>
+<!-- <script src="https://cdn.staticfile.org/angular.js/1.7.9/angular.min.js"></script> -->
+<script src="https://cdn.staticfile.org/angular.js/1.3.2/angular.min.js"></script>
+<script>
+var app = angular.module('myApp', []);
+var myScope
+app.filter("svgUnit",function(){//计算收入
+    return function(val, type){
+    	// if(val===undefined || val==="" || val ===null || val ==="-"){
+		// 	return "-";
+		// }
+    	// if(type=='numA'){
+    	// 	return val+ " A";
+    	// }else if(type=='numMW'){
+    	// 	return val+ " kW";
+    	// }else if(type=='numMWh'){
+    	// 	return val+ " kWh";
+    	// }else if(type=='numMVar'){
+    	// 	return val+ " kVar";
+    	// }else if(type=='numKV'){
+    	// 	return val+ " V";
+    	// }else if(type=='numA'){
+    	// 	return val+ " A";
+    	// }else if(type=='numHz'){
+    	// 	return val+ " Hz";
+    	// }
+		return val;
+    }
+}).controller('myCtrl', function($scope) {
+    $scope.svgUrl = ''
+    $scope.data = {}
+    myScope = $scope
+});
+
+
+window.addEventListener("message", function (event) {
+    myScope.svgUrl = event.data.svgUrl
+    myScope.data = event.data.svgData || {}
+    myScope.$apply()
+})
+</script>
+</html>

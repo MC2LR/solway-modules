@@ -1,0 +1,14 @@
+.el-button{
+    &.button-tab{
+        background: $tab-bg;
+        border: 1px solid $tab-border-color;
+        color: $tab-font-color;
+        &.active{
+            background: $tab-active-bg;
+            border: 1px solid $tab-active-border-color;
+            color:$tab-active-color;
+        }
+    }
+    // &.el-button--default{
+    // }
+}

@@ -1,0 +1,14 @@
+.custom_dark1{
+    .el-pagination.is-background .btn-prev, .el-pagination.is-background .btn-next, .el-pagination.is-background .el-pager li {
+        background-color: rgb(16,30,57);
+        border:1px solid rgba(52,210,238,1);
+        color:rgba(47,191,203,1)
+    }
+    .el-pagination.is-background .el-pager li:not(.disabled).active {
+        background-color: rgba(47,191,204,1);
+        color: #FFFFFF;
+    }
+    .el-pagination__total {
+        color: rgba(52, 210, 238, 0.7);
+    }
+}

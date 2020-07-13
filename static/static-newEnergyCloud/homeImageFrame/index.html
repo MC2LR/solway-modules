@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        html,body {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+        }
+        body {
+            overflow: hidden;
+            background-color: #fff;
+        }
+        #container {
+            width: max-content;
+            height: 100%;
+        }
+        #container img {
+            width: 100vw;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+
+</div>
+<script>
+    var container = document.getElementById('container')
+    window.addEventListener("message", function (event) {
+        event.data.imgList.forEach(imgUrl => {
+            var img = document.createElement("img");
+            img.src = imgUrl;
+            container.appendChild(img);
+        });
+    })
+</script>
+</body>
+</html>

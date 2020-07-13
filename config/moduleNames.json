@@ -1,0 +1,127 @@
+[
+	{
+		"name": "runStatus",
+		"proxyTarget": null
+	},
+	{
+		"name": "sparePart",
+		"proxyTarget": null
+	},
+	{
+		"name": "messageManage",
+		"proxyTarget": null
+	},
+	{
+		"name": "dataQuery",
+		"proxyTarget": null
+	},
+	{
+		"name": "contractManage",
+		"proxyTarget": null
+	},
+	{
+		"name": "comprehensiveEnergy",
+		"proxyTarget": null
+	},
+	{
+		"name": "formCreate",
+		"proxyTarget": null
+	},
+	{
+		"name": "stationManage",
+		"proxyTarget": null
+	},
+	{
+		"name": "wechatOfficialAccounts",
+		"proxyTarget": null
+	},
+	{
+		"name": "dynamicFormConfig",
+		"proxyTarget": null
+	},
+	{
+		"name": "stationVideos",
+		"proxyTarget": null
+	},
+	{
+		"name": "newEnergyCloud",
+		"isHenan": false,
+		"proxyTable": {
+			"/document": {
+				"target": "http://necloud.solway.cn",
+				"changeOrigin": true,
+				"pathRewrite": {
+					"^/": ""
+				}
+			},
+			"/wp": {
+				"target": "http://netest.solway.cn:9090",
+				"changeOrigin": true,
+				"pathRewrite": {
+					"^/": ""
+				}
+			},
+			"/oldApi": {
+				"target": "http://netest.solway.cn:9090",
+				"changeOrigin": true,
+				"pathRewrite": {
+					"^/oldApi": ""
+				}
+			}
+		}
+	},
+	{
+		"name": "systemModules"
+	},
+	{
+		"name": "companyManagement"
+	},
+	{
+		"name": "moduleSale"
+	},
+	{
+		"name": "defaultRoles"
+	},
+	{
+		"name": "roleAuthorityManagement"
+	},
+	{
+		"name": "videoSurveillance",
+		"proxyTable": {
+			"/video": {
+				"target": "http://103.3.121.25:10000",
+				"changeOrigin": true,
+				"pathRewrite": {
+					"^/video": ""
+				}
+			}
+		}
+	},
+	{
+		"name": "smartVideo"
+	},
+	{
+		"name": "inverterSubarray"
+	},
+	{
+		"name": "MochaITOM",
+		"proxyTable": {
+			"/microplat": {
+				"target": "http://netest.solway.cn:9090",
+				"changeOrigin": true,
+				"pathRewrite": {
+					"^/": ""
+				}
+			}
+		}
+	},
+	{
+		"name": "intelligentAlarm"
+	},
+	{
+		"name": "microServeceTpl"
+	},
+	{
+		"name": "intelligentAlarms"
+	}
+]

@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+@mixin theme_fc($opacity) {
+    @for $i from 1 to length($theme)+1 {
+        [data-theme="#{nth($theme, $i)}"] & {
+            color: rgba(nth($theme-fc, $i), $opacity);
+        }
+    }
+}
+
+@mixin theme_hover_fc($opacity) {
+    @for $i from 1 to length($theme)+1 {
+        [data-theme="#{nth($theme, $i)}"] & {
+            color: rgba(nth($theme-fc, $i), $opacity);
+        }
+    }
+}
+
+@mixin theme_bgc($opacity) {
+    @for $i from 1 to length($theme)+1 {
+        [data-theme="#{nth($theme, $i)}"] & {
+            background-color: rgba(nth($theme-bgc, $i), $opacity);
+        }
+    }
+}
+
+@mixin bgi($frist, $last) {
+    @for $i from 1 to length($theme)+1 {
+        [data-theme="#{nth($theme, $i)}"] & {
+            background-image: url("#{$frist}#{nth($theme, $i)}#{$last}");
+        }
+    }
+}

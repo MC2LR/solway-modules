@@ -1,0 +1,13 @@
+.el-checkbox{
+    .el-checkbox__input{
+        .el-checkbox__inner {
+            border: 1px solid $checkbox-border-color;
+            background-color: $checkbox-bg-color;
+            &::after {
+                border: 1px solid $checked-arrow-color;
+                border-left: 0;
+                border-top: 0;
+            }
+        }
+    }
+} 

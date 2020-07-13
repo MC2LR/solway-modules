@@ -1,0 +1,63 @@
+.el-table {
+    color: $tbodyColor;
+    border: none;
+    background: transparent;
+
+    &::before {
+        width: 0;
+        height: 0;
+    }
+
+    tr {
+        background-color: $tbodyBackground;
+
+        &.hover-row>td {
+            background-color: $tbodyHoverBackground !important;
+            cursor: pointer;
+        }
+
+        th {
+            color: $thColor;
+            background: $thBackground;
+            border-right: 1px solid $borderColor;
+            padding: $thPadding;
+            text-align: center;
+
+            &.is-leaf {
+                border-bottom: 1px solid $borderColor;
+            }
+
+            &:nth-child(1) {
+                border-left: 1px $borderLeftDisplay $borderColor;
+            }
+        }
+
+        td {
+            border-right: 1px solid $borderColor;
+            text-align: center;
+            border-bottom: 1px solid $borderColor;
+
+            &:nth-child(1) {
+                border-left: 1px $borderLeftDisplay $borderColor;
+            }
+        }
+    }
+}
+
+.el-table--border::after,
+.el-table--group::after,
+.el-table::before {
+    background-color: initial;
+}
+
+.el-table__fixed-right::before,
+.el-table__fixed::before {
+    background-color: initial;
+}
+
+.el-table__fixed-right,
+.el-table__fixed {
+    .el-table__fixed-body-wrapper {
+        bottom: 0 !important;
+    }
+}

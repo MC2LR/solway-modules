@@ -1,0 +1,14 @@
+.el-input{
+    .el-input__inner{
+        background: $input-bg;
+        border: 1px solid $input-border-color;
+        color: $input-font-color;
+    }
+    ::-webkit-input-placeholder {
+        color: $font-placeholder-color;
+    }
+    .el-input__icon{
+        cursor: pointer;
+        color: $icon-color;
+    }
+}

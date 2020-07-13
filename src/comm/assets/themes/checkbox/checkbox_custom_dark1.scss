@@ -1,0 +1,15 @@
+.custom_dark1 {
+    .el-checkbox__input.is-checked .el-checkbox__inner {
+        background-color: #2FBFCC;
+        border-color: #2FBFCC;
+        color: rgba(52, 210, 238, 0.5);
+    }
+    .el-checkbox__inner {
+        background: none;
+        border-color: rgba(52, 210, 238, 0.5);
+        color: rgba(52, 210, 238, 0.5);
+    }
+    &.el-checkbox {
+        color: #2FBFCC;
+    }
+}

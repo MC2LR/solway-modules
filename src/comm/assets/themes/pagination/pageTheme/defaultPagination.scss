@@ -1,0 +1,24 @@
+.el-pagination{
+    &.is-background .btn-prev, &.is-background .btn-next {
+        background-color: $btn-arrow-bg;
+        border:1px solid $btn-arrow-border-color;
+        color: $btn-arrow-color;
+    }
+    &.is-background .el-pager li:not(.disabled).active {
+        background-color: $btn-active-bg-color;
+        border:1px solid $btn-active-border-color;
+        color: $btn-active-color;
+    }
+    &.is-background .btn-prev:disabled, &.is-background .btn-next:disabled {
+        color: $btn-arrow-disabled-color;
+        border:1px solid $btn-arrow-disabled-border-color;
+    }
+    .el-pagination__total {
+        color: $total-color;
+    }
+    &.is-background .el-pager li {
+        background-color: $btn-common-bg;
+        border:1px solid $btn-common-border-color;
+        color: $btn-common-color;
+    }
+}

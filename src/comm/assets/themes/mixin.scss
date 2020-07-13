@@ -1,0 +1,38 @@
+@charset "utf-8";
+$pageTheme: darkBlue;
+
+// 这个得依赖全局的主题
+@mixin c($attr, $color-list) {
+    @for $i from 1 to length($theme)+1 {
+        [data-theme="#{nth($theme, $i)}"] & {
+            #{$attr}: nth($color-list, $i);
+        }
+    }
+}
+
+// 这个是页面内使用，可以传入主题
+@mixin page_c($attr, $color-list) {
+    @for $i from 1 to length($pageTheme)+1 {
+        [data-pagetheme="#{nth($pageTheme, $i)}"] & {
+            #{$attr}: nth($color-list, $i);
+        }
+    }
+}
+
+// 背景图
+@mixin bgi($frist, $last) {
+    @for $i from 1 to length($theme)+1 {
+        [data-theme="#{nth($theme, $i)}"] & {
+            background-image: url("#{$frist}#{nth($theme, $i)}#{$last}");
+        }
+    }
+}
+
+// 背景图
+@mixin page_bgi($frist, $last) {
+    @for $i from 1 to length($pageTheme)+1 {
+        [data-pagetheme="#{nth($pageTheme, $i)}"] & {
+            background-image: url("#{$frist}#{nth($pageTheme, $i)}#{$last}");
+        }
+    }
+}

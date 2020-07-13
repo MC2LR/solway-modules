@@ -1,0 +1,38 @@
+.custom_dark1{
+    .el-input--suffix .el-input__inner {
+        background: rgb(16,30,57);
+        border:1px solid rgba(52, 210, 238, 0.5);
+        color: rgba(52, 210, 238, 0.5);
+    }
+    &.el-input--suffix .el-input__inner {
+        background: rgb(16,30,57);
+        border:1px solid rgba(52, 210, 238, 0.5);
+        color: rgba(52, 210, 238, 0.5);
+    }
+    &.el-input-group--append .el-input__inner {
+        background: rgb(16,30,57);
+        border:1px solid rgba(52, 210, 238, 0.5);
+        color: rgba(52, 210, 238, 0.5);
+    }
+    .el-input-group__append, .el-input-group__prepend {
+        background-color: rgb(16,30,57);
+        color: rgba(52, 210, 238, 0.7);
+        border: 1px solid rgba(52, 210, 238, 0.5);
+    }
+    .el-input__inner::-webkit-input-placeholder {
+        /* WebKit browsers */
+        color: rgba(52, 210, 238, 0.3);
+    }
+    .el-input__inner:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: rgba(52, 210, 238, 0.3);
+    }
+    .el-input__inner::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: rgba(52, 210, 238, 0.3);
+    }
+    .el-input__inner::-ms-input-placeholder {
+        /* Internet Explorer 10+ */
+        color: rgba(52, 210, 238, 0.3);
+    }
+}

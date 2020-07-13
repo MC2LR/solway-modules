@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>视频</title>
+    <script src="./ezuikit.js"></script>
+    <script src="./js/jquery.min.js"></script>
+<style>
+    html, body, #playWind {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #canvas_draw0 {
+        border: 1px solid #000 !important;
+    }
+
+    #canvas_draw0 .parent-wnd > div {
+        background-color: transparent !important;
+    }
+</style>
+</head>
+<body>
+<div id="playWind"></div>
+<script>
+window.onload = function () {
+    var params = window.location.search.substr(1);
+    var data = {};
+    params.split('&').forEach(function (v) {
+        var a = v.split('=');
+        data[a[0]] = a[1];
+    })
+    var decoder = new EZUIKit.EZUIPlayer({
+        id: 'playWind',
+        autoplay: data.autoplay === '1',
+        url: data.url + (data.begin ? ('?begin=' + data.begin + '&end=' + data.end) : ''),
+        accessToken: data.accessToken,
+        decoderPath: location.pathname.split('/iframe.html')[0],
+        width: window.innerWidth,
+        height: window.innerHeight,
+        handleError: function handleError(e) {
+            console.log('捕获到错误', e);
+        },
+        handleSuccess: function handleSuccess() {
+            console.log("播放成功回调函数，此处可执行播放成功后续动作");
+        }
+    });
+
+    window.addEventListener('resize', function () {
+        setTimeout(function () {
+            decoder.jSPlugin.JS_Resize(window.innerWidth, window.innerHeight);
+        }, 200);
+    });
+
+    window.addEventListener("message", function (event) {
+        if (event.origin !== location.origin) return;
+        if (event.data === 'capturePicture') {
+            decoder.capturePicture(0, new Date().getTime() + 'capturePicture');
+        } else if (event.data === 'play') {
+            // decoder.play({}, { url: data.url })
+            event.source.postMessage(event.data, event.origin);
+        } else if (event.data === 'getOSDTime') {
+            decoder.getOSDTime(function(iTime) {
+                event.source.postMessage({
+                    name: 'getOSDTime',
+                    time: iTime
+                }, event.origin);
+            });
+        } else {
+            decoder[event.data]();
+            event.source.postMessage(event.data, event.origin);
+        }
+    }, false);
+
+    // $("#start").click(function () {
+    //     function handleError(e) {
+    //         console.log('handleError', e)
+    //     }
+    //     function handleSuccess() {
+    //         console.log('handleSuccess')
+    //     }
+    //     decoder.play({
+    //         handleError: handleError,
+    //     });
+    // })
+    // $("#pause").click(function () {
+    //     decoder.pause();
+    // })
+    // $("#stop").click(function () {
+    //     decoder.stop();
+    // })
+    // $("#getOSDTime").click(function () {
+    //     var callback = function (iTime) {
+    //         alert(iTime);
+    //         console.log("iTime", iTime);
+    //     }
+    //     decoder.getOSDTime(callback);
+    // })
+    // $("#openSound").click(function () {
+    //     decoder.openSound();
+    // })
+    // $("#closeSound").click(function () {
+    //     decoder.closeSound();
+    // })
+    // $("#capturePicture").click(function () {
+    //     decoder.capturePicture(0, new Date().getTime() + 'capturePicture');
+    // })
+    // $("#play").click(function () {
+    //     decoder.play();
+    // })
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+[data-theme="default"] body {
+    background: #fff;
+    background-size: cover;
+}
+
+[data-theme="simple"] body {
+    background: #fff;
+    background-size: cover;
+}
