@@ -113,7 +113,7 @@
 		"@form-create/element-ui": "^1.0.3",
 		"@liveqing/liveplayer": "^1.7.7",
 		"@ztree/ztree_v3": "^3.5.41",
-		"axios": "^0.19.0",
+		"axios": "^0.21.1",
 		"core-js": "^2.6.11",
 		"echarts": "^4.5.0",
 		"echarts-gl": "^1.1.1",
